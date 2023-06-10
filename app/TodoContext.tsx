@@ -28,14 +28,6 @@ interface TodoProviderProps {
 export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
   const [todos, setTodos] = useState<Todo[]>([])
 
-  const [editableIds, setEditableIds] = useState<number[]>([])
-
-  const handleEditClick = (todo: Todo) => {
-    if (!editableIds.includes(todo.id)) {
-      setEditableIds([...editableIds, todo.id])
-    }
-  }
-
   const addTodo = (todo: Todo) => {
     setTodos((prevTodos) => [...prevTodos, todo])
   }
@@ -51,9 +43,7 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
   }
 
   return (
-    <TodoContext.Provider
-      value={{ todos, addTodo, updateTodo, deleteTodo, handleEditClick }}
-    >
+    <TodoContext.Provider value={{ todos, addTodo, updateTodo, deleteTodo }}>
       {children}
     </TodoContext.Provider>
   )
