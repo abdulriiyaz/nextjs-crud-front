@@ -1,18 +1,15 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Next.js",
-  description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+  name: "Tasker",
+  description: "Minimal todo task app.",
   mainNav: [
     {
-      title: "Home",
-      href: "/",
+      title: "View Tasks",
+      href: "/tasks",
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    github: "https://github.com/abdulriiyaz",
   },
 }
