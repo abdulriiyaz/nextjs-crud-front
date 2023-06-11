@@ -30,7 +30,7 @@ export function AddATodo() {
     setTitle(e.target.value)
   }
 
-  const handleDescChange = (e: ChangeEvent<HTMLInputElement>): void => {
+  const handleDescChange = (e: ChangeEvent<HTMLTextAreaElement>): void => {
     setDescription(e.target.value)
   }
 
@@ -84,11 +84,7 @@ export function AddATodo() {
           />
           <div className="grid gap-2 w-1/3 mt-2">
             <div className="flex items-center space-x-2">
-              <Checkbox
-                id="terms"
-                checked={completed}
-                onCheckedChange={handleCompletedChange}
-              />
+              <Checkbox id="terms" checked={completed} />
               <label
                 htmlFor="terms"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
